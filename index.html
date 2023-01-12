@@ -11,21 +11,27 @@
 </head>
 <body>
     <div class="hero is-flex is-flex-direction-column is-align-items-center is-justify-content-center is-fullheight">
+            <label class="help-text ">Depature Date</label>
         <div class="column is-half">
-            <input class="input is-primary" type="text" placeholder="Depature Date">
+            <input class="input is-primary demo" id="depatureD"  type="date" placeholder="Depature Date">
+        </div>
+            <label class="help-text">Arrival Date</label>
+        <div class="column is-half">
+            <input class="input is-primary" id="arrivalD" type="date" placeholder="Arrival Date">
         </div>
         <div class="column is-half">
-            <input class="input is-primary" type="text" placeholder="Arrival Date">
+            <input class="input is-primary" id="flight-number" type="text" placeholder="Flight Number">
         </div>
         <div class="column is-half">
-            <input class="input is-primary" type="text" placeholder="Flight Number">
+            <input class="input is-primary" id="depature-airport" type="text" placeholder="Depature Airport">
         </div>
         <div class="column is-half">
-            <input class="input is-primary" type="text" placeholder="Depature Airport">
+            <input class="input is-primary" id="arrival-airport" type="text" placeholder="Arrival Airport">
         </div>
-        <div class="column is-half">
-            <input class="input is-primary" type="text" placeholder="Arrival Airport">
+            <button class="button is-success is-rounded" id="search-button">Search</button>
         </div>
-      </div>
+    </div>
+
+      <script src="./assets/js/script.js"></script>
 </body>
 </html>
