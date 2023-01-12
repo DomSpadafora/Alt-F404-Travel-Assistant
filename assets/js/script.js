@@ -1,4 +1,5 @@
 var getDateBtn = document.getElementById('search-button')
+var background = document.getElementById('background')
  
        ////Bulma Calender Functionality/////
 // To access to bulmaCalendar instance of an element
@@ -39,10 +40,7 @@ fetch(`https://flight-info-api.p.rapidapi.com/schedules?version=v1&DepartureDate
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
-	
-
-
-
-
 }
+
+
 getDateBtn.addEventListener('click', flightData)
