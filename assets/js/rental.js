@@ -13,7 +13,6 @@ fetch(`https://airports-by-api-ninjas.p.rapidapi.com/v1/airports?iata=${aAirport
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err))
-    .then(response.data.city.region);
 
 }
 
