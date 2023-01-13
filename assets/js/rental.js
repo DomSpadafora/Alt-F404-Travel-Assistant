@@ -1,6 +1,12 @@
 //use the values on the rental api
 
 var getRentalBtn = document.getElementById('rental-button')
+var rentalStart = document.querySelector(".rentalStart")
+var resultShow = document.querySelector(".results")
+var rental1 = document.getElementById('1rental')
+var body = document.getElementById("body")
+
+
 
 function rentalInput(){
     var checkoutD = document.getElementById('checkoutD').value
@@ -10,6 +16,7 @@ function rentalInput(){
     var region = localStorage.getItem("region");
     var aDate = localStorage.getItem("aDate");
     rentalData(city, region, aDate, checkoutD, aNumber, cNumber)
+    showResults()
 }
 
 
@@ -35,7 +42,12 @@ function rentalData(city, region, aDate, checkoutD, aNumber, cNumber){
         .then(response => console.log(response))
         .catch(err => console.error(err));
 
+}
 
+function showResults (){
+    rentalStart.setAttribute("id","hide")
+    resultShow.removeAttribute("id","hide")
+    body.setAttribute("style", "background-image:none")
 }
 
 getRentalBtn.addEventListener('click', rentalInput)
