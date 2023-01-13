@@ -4,3 +4,7 @@ body{
     background-size:cover;
     opacity: 90%;
 }
+
+#hide {
+    display:none;
+}

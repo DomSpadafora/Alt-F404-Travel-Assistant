@@ -39,7 +39,7 @@ function travelData(dDate, aDate, fNumber, dAirport, aAirport) {
 
 fetch(`https://flight-info-api.p.rapidapi.com/schedules?version=v1&DepartureDate=${dDate}&ArrivalDate=${aDate}&FlightNumber=${fNumber}&DepartureAirport=${dAirport}&ArrivalAirport=${aAirport}`, options)
 	.then(response => response.json())
-	.then(response =>  {
+	.then(response => {
 		localStorage.setItem("aDate", aDate)
 	})
 	.catch(err => console.error(err));
