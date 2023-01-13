@@ -10,22 +10,58 @@
     <title>Rentals</title>
 </head>
 <body>
-    <div class="hero is-flex is-flex-direction-column is-align-items-center is-justify-content-center is-fullheight">
-            <label class="help-text has-text-black is-size-4 has-text-weight-bold">Checkout Date</label>
-        <div class="column is-half">
-            <input class="input is-primary demo" id="depatureD"  type="date" placeholder="Depature Date">
+    <section>
+        <div class="hero is-flex is-flex-direction-column is-align-items-center is-justify-content-center is-fullheight">
+                <label class="help-text has-text-black is-size-4 has-text-weight-bold">Checkout Date</label>
+            <div class="column is-half">
+                <input class="input is-primary demo" id="checkoutD"  type="date" placeholder="Depature Date">
+            </div>
+                <label class="help-text has-text-black is-size-4 has-text-weight-bold">Adults</label>
+            <div class="column is-half">
+                <input class="input is-primary" id="adult-number" placeholder="How many adults will be staying with you?">
+            </div>
+            <label class="help-text has-text-black is-size-4 has-text-weight-bold">Children</label>
+            <div class="column is-half">
+                <input class="input is-primary" id="children-number" placeholder="How many children will be staying with you? ">
+            </div>
+            <div>
+                <button class="button is-danger is-rounded" id="rental-button">Search</button>
+            </div>
         </div>
-            <label class="help-text has-text-black is-size-4 has-text-weight-bold">Adults</label>
-        <div class="column is-half">
-            <input class="input is-primary" id="arrivalD" placeholder="How many adults will be staying with you?">
-        </div>
-        <label class="help-text has-text-black is-size-4 has-text-weight-bold">Children</label>
-        <div class="column is-half">
-            <input class="input is-primary" id="arrivalD" placeholder="How many children will be staying with you? ">
-        </div>
-        <div>
-            <button class="button is-danger is-rounded" id="search-button">Search</button>
-        </div>
-    </div>
+    </section>
+
+    <section class="results" id="hide">
+        <div class="hero is-flex is-flex-direction-row is-fullheight is-flex-wrap-wrap">
+            <div class="column is-one-quarter box" id="1rental">
+              First column
+            </div>
+            <div class="column is-one-quarter box box-color-black " id="2rental">
+              Second column
+            </div>
+            <div class="column is-one-quarter box" id="3rental">
+              Third column
+            </div>
+            <div class="column is-one-quarter box" id="4rental">
+              Fourth column
+            </div>
+            <div class="column is-one-quarter box" id="5rental">
+              Fifth column  
+            </div>
+            <div class="column is-one-quarter box" id="6rental">
+              Sixth column
+            </div>
+            <div class="column is-one-quarter box" id="7rental">
+              Seventh column
+            </div>
+            <div class="column is-one-quarter box" id="8rental">
+              Eight column
+            </div>
+
+
+          </div>
+    </section>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/rental.js"></script>
 </body>
 </html>
