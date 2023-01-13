@@ -40,6 +40,10 @@ fetch(`https://flight-info-api.p.rapidapi.com/schedules?version=v1&DepartureDate
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+
+	localStorage.setItem("aDate", aDate)
+	localStorage.setItem("aAirport", aAirport)
+
 }
 
 
