@@ -62,11 +62,11 @@ function showResults (response){
         var singlePrice = element.price.rate
         var totalPrice = element.price.total
         var deeplink = element.deeplink
-        var images = element.images
+        var images = element.images[0]
         
         //Empty Page Elements
         var divEl = document.createElement("div")
-        divEl.setAttribute("class", "column is-one-fifth-desktop is-half-mobile box")
+        divEl.setAttribute("class", "column is-one-quarter-desktop is-half-mobile box has-text-black")
         mainDiv.append(divEl)
         var nameEl = document.createElement("h3")
         var ratingEl = document.createElement("h4")
@@ -89,6 +89,7 @@ function showResults (response){
         singlePriceEl.textContent = `Single Night: $${singlePrice}`
         totalPriceEl.textContent = `Total Price: $${totalPrice}`
         deeplinkEl.textContent = "Learn More"
+        divEl.setAttribute("style", `background-image: url("${images}")`)
 
 
 
