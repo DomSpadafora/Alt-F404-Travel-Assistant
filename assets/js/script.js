@@ -20,7 +20,7 @@ function flightData() {
 	var aAirport = document.getElementById('arrival-airport').value
 	console.log(dDate, aDate, fNumber, dAirport, aAirport)
 	travelData(dDate, aDate, fNumber, dAirport, aAirport)
-	getArrivalAirport(aAirport)
+	getArrivalAirport(aAirport, aDate)
 }
 
 function travelData(dDate, aDate, fNumber, dAirport, aAirport) {
@@ -37,14 +37,19 @@ function travelData(dDate, aDate, fNumber, dAirport, aAirport) {
 		}
 	};
 
-	fetch(`https://flight-info-api.p.rapidapi.com/schedules?version=v1&DepartureDate=${dDate}&ArrivalDate=${aDate}&FlightNumber=${fNumber}&DepartureAirport=${dAirport}&ArrivalAirport=${aAirport}`, options)
-		.then(response => response.json())
-		.then(response => console.log(response))
-		.catch(err => console.error(err));
+fetch(`https://flight-info-api.p.rapidapi.com/schedules?version=v1&DepartureDate=${dDate}&ArrivalDate=${aDate}&FlightNumber=${fNumber}&DepartureAirport=${dAirport}&ArrivalAirport=${aAirport}`, options)
+	.then(response => response.json())
+	.then(response => {
+		
+
+	})
+	.catch(err => console.error(err));
+
+	
 }
 
 
-function getArrivalAirport(aAirport) {
+function getArrivalAirport(aAirport, aDate) {
     
 	const options = {
 		method: 'GET',
@@ -58,16 +63,20 @@ function getArrivalAirport(aAirport) {
 		.then(response => response.json())
 		.then(response => {
 			var city = response[0].city
-			var state = response[0].region
+			var region = response[0].region
 			console.log(city)
-			console.log(state)
+			console.log(region)
 
-			///need to add to local storage. any info for rental page
+			localStorage.setItem("city", city)
+			localStorage.setItem("region", region)
+			localStorage.setItem("aDate", aDate)
+
+
+			window.location.href = "rental.html"
 
 		})
 		.catch(err => console.error(err))
 
-		
 		
 		
 	

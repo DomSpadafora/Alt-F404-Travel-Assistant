@@ -6,26 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./assets/images/house.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="~bulma-carousel/dist/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="./assets/css/rentalstyle.css">
     <title>Rentals</title>
 </head>
-<body>
-    <div class="hero is-flex is-flex-direction-column is-align-items-center is-justify-content-center is-fullheight">
-            <label class="help-text has-text-black is-size-4 has-text-weight-bold">Checkout Date</label>
-        <div class="column is-half">
-            <input class="input is-primary demo" id="depatureD"  type="date" placeholder="Depature Date">
+<body id="body">
+    <section class="rentalStart">
+        <div class="hero is-flex is-flex-direction-column is-align-items-center is-justify-content-center is-fullheight">
+                <label class="help-text has-text-black is-size-4 has-text-weight-bold">Checkout Date</label>
+            <div class="column is-half">
+                <input class="input is-primary demo" id="checkoutD"  type="date" placeholder="Depature Date">
+            </div>
+                <label class="help-text has-text-black is-size-4 has-text-weight-bold">Adults</label>
+            <div class="column is-half">
+                <input class="input is-primary" id="adult-number" placeholder="How many adults will be staying with you?">
+            </div>
+            <label class="help-text has-text-black is-size-4 has-text-weight-bold">Children</label>
+            <div class="column is-half">
+                <input class="input is-primary" id="children-number" placeholder="How many children will be staying with you? ">
+            </div>
+            <div>
+                <button class="button is-danger is-rounded" id="rental-button">Search</button>
+            </div>
         </div>
-            <label class="help-text has-text-black is-size-4 has-text-weight-bold">Adults</label>
-        <div class="column is-half">
-            <input class="input is-primary" id="arrivalD" placeholder="How many adults will be staying with you?">
+    </section>
+
+    <section class="results" id="hide">
+        <div class="hero is-flex is-flex-direction-row is-fullheight is-flex-wrap-wrap pt-6 is-3-desktop" id="mainDiv">
+
+
         </div>
-        <label class="help-text has-text-black is-size-4 has-text-weight-bold">Children</label>
-        <div class="column is-half">
-            <input class="input is-primary" id="arrivalD" placeholder="How many children will be staying with you? ">
-        </div>
-        <div>
-            <button class="button is-danger is-rounded" id="search-button">Search</button>
-        </div>
-    </div>
+    </section>
+
+    <script src="~bulma-carousel/dist/js/bulma-carousel.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+		<script>
+		bulmaCarousel.attach('#carousel-demo', {
+			slidesToScroll: 1,
+			slidesToShow: 4
+		});
+		</script>
+
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/rental.js"></script>
+
 </body>
 </html>
