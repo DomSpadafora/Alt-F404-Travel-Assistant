@@ -1,15 +1,6 @@
 var getDateBtn = document.getElementById('search-button')
 var background = document.getElementById('background')
 
-////Bulma Calender Functionality/////
-// To access to bulmaCalendar instance of an element
-var element = document.querySelector('#my-element');
-if (element) {
-	// bulmaCalendar instance is available as element.bulmaCalendar
-	element.bulmaCalendar.on('select', function (datepicker) {
-		console.log(datepicker.data.value());
-	});
-}
 
 function flightData() {
 
@@ -21,7 +12,10 @@ function flightData() {
 	console.log(dDate, aDate, fNumber, dAirport, aAirport)
 	travelData(dDate, aDate, fNumber, dAirport, aAirport)
 	getArrivalAirport(aAirport)
+
+	
 }
+
 
 function travelData(dDate, aDate, fNumber, dAirport, aAirport) {
 	console.log(dDate)
@@ -68,6 +62,8 @@ function getArrivalAirport(aAirport) {
 
 			localStorage.setItem("city", city)
 			localStorage.setItem("region", region)
+
+			window.location.href = 'http://127.0.0.1:5500/Alt-F404-Travel-Assistant/rental.html';
 			
 
 		})
