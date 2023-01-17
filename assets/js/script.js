@@ -38,6 +38,8 @@ fetch(`https://flight-info-api.p.rapidapi.com/schedules?version=v1&DepartureDate
 	})
 	.catch(err => console.error(err));
 
+	window.location.href = 'http://127.0.0.1:5500/Alt-F404-Travel-Assistant/rental.html'
+
 
 }
 
