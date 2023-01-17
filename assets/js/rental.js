@@ -8,6 +8,7 @@ var mainDiv = document.getElementById("mainDiv")
 
 
 
+
 function rentalInput(){
     var checkoutD = document.getElementById('checkoutD').value
 	var aNumber = document.getElementById('adult-number').value
@@ -31,7 +32,7 @@ function rentalData(city, region, aDate, checkoutD, aNumber, cNumber){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '6c1819b5d5msh224df4793f36756p19b1cfjsnef2c211706bb',
+            'X-RapidAPI-Key': 'e70849d717mshe1c01a1ea8a137dp15a301jsn03fc382fd86f',
             'X-RapidAPI-Host': 'airbnb13.p.rapidapi.com'
         }
     };
@@ -51,8 +52,11 @@ function showResults (response){
     resultShow.removeAttribute("id","hide")
     body.setAttribute("style", "background-image:none")
 
-    for (let index = 0; index < 9 ; index++) {
+    for (let index = 0; index < 8 ; index++) {
         //Data
+
+        var imagesArray = []
+
         const element = response.results[index];
         var name = element.name
         var rating = element.rating
@@ -62,10 +66,26 @@ function showResults (response){
         var singlePrice = element.price.rate
         var totalPrice = element.price.total
         var deeplink = element.deeplink
-        var images = element.images[0]
+        var images = element.images
+
+        var divEl = document.createElement("div")
+        var bigDiv = document.createElement("div")
+        bigDiv.setAttribute("class", "carousel")
+        divEl.append(bigDiv)
+
+        for (let i = 0 ; i < 6; i++){
+            imagesArray.push(images[i])
+        }
+        for (let j=0 ; j < imagesArray.length; j++){
+            var divCreate = document.createElement("div")
+            divCreate.setAttribute("class",`item-${j+1}`)
+            bigDiv.append(divCreate)
+            var imageEl = document.createElement("img")
+            imageEl.setAttribute("src", imagesArray[j])
+            divCreate.append(imageEl)
+        }
         
         //Empty Page Elements
-        var divEl = document.createElement("div")
         divEl.setAttribute("class", "column is-one-quarter-desktop is-half-mobile box has-text-black")
         mainDiv.append(divEl)
         var nameEl = document.createElement("h3")
@@ -89,13 +109,33 @@ function showResults (response){
         singlePriceEl.textContent = `Single Night: $${singlePrice}`
         totalPriceEl.textContent = `Total Price: $${totalPrice}`
         deeplinkEl.textContent = "Learn More"
-        divEl.setAttribute("style", `background-image: url("${images}")`)
-
-
-
-        
-        
+        // divEl.setAttribute("style", `background-image: url("${images}")`)
     }
+    var options = {
+        navigation:true,
+        slidesToScroll:1,
+        slidesToShow:1
+
+    }
+    var carousels = bulmaCarousel.attach('.carousel', options);
+    console.log (carousels)
+
+    for(var i = 0; i < carousels.length; i++) {
+        // Add listener to  event
+        carousels[i].on('before:show', state => {
+            console.log(state);
+        });
+    }
+    
+    // Access to bulmaCarousel instance of an element
+    var element = document.querySelector('#my-element');
+    if (element && element.bulmaCarousel) {
+        // bulmaCarousel instance is available as element.bulmaCarousel
+        element.bulmaCarousel.on('before-show', function(state) {
+            console.log(state);
+        });
+    }
+
 }
 
 getRentalBtn.addEventListener('click', rentalInput)
