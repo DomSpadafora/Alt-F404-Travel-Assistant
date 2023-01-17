@@ -76,19 +76,27 @@ function showResults (response){
         for (let i = 0 ; i < 6; i++){
             imagesArray.push(images[i])
         }
+
+
         for (let j=0 ; j < imagesArray.length; j++){
             var divCreate = document.createElement("div")
             divCreate.setAttribute("class",`item-${j+1}`)
+            divCreate.style.width="100%"
+            
+
             bigDiv.append(divCreate)
             var imageEl = document.createElement("img")
             imageEl.setAttribute("src", imagesArray[j])
+            imageEl.setAttribute("style", "aspect-ratio:16/9")
             divCreate.append(imageEl)
         }
         
         //Empty Page Elements
-        divEl.setAttribute("class", "column is-one-quarter-desktop is-half-mobile box has-text-black")
+        divEl.setAttribute("class", "column is-one-quarter-desktop is-half-mobile box has-text-black p-0 is-2")
+        divEl.setAttribute("style","overflow:hidden")
         mainDiv.append(divEl)
-        var nameEl = document.createElement("h3")
+        var nameEl = document.createElement("h4")
+        nameEl.setAttribute("style", "font-weight:bold")
         var ratingEl = document.createElement("h4")
         var bedroomsEl = document.createElement("h4")
         var bathroomsEl = document.createElement("h4")
@@ -131,7 +139,7 @@ function showResults (response){
     var element = document.querySelector('#my-element');
     if (element && element.bulmaCarousel) {
         // bulmaCarousel instance is available as element.bulmaCarousel
-        element.bulmaCarousel.on('before-show', function(state) {
+        element.bulmaCarousel.on('show', function(state) {
             console.log(state);
         });
     }
