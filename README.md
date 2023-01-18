@@ -1,6 +1,6 @@
 # Travel Assistant
 
-Travel Assistant is a rental finding app that allows people to search for Air BnB rentals using only their flight information. Using that information we connected mutiple API's to populate avaiable Air BnB rentals around your arrival airport. Our project used HTML, CSS, Javascript, Bulma, and 3 API's. This application was the 1st project in the UCF Coding Bootcamp, and one that we look to continue to maintain beyond the class. 
+Travel Assistant is a rental finding app that allows people to search for AirbnB rentals using only their flight information. Using that information we connected mutiple API's to populate avaiable AirbnB rentals around your arrival airport. Our project used HTML, CSS, Javascript, Bulma, and 3 API's. This application was the 1st project in the UCF Coding Bootcamp, and one that we look to continue to maintain beyond this class. 
 
 ## Project Requirements:
 
