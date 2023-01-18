@@ -11,9 +11,9 @@ function flightData() {
 	var aAirport = document.getElementById('arrival-airport').value
 	console.log(dDate, aDate, fNumber, dAirport, aAirport)
 	travelData(dDate, aDate, fNumber, dAirport, aAirport)
-	getArrivalAirport(aAirport)
 
-	
+	getArrivalAirport(aAirport, aDate)
+
 }
 
 
@@ -34,17 +34,16 @@ function travelData(dDate, aDate, fNumber, dAirport, aAirport) {
 fetch(`https://flight-info-api.p.rapidapi.com/schedules?version=v1&DepartureDate=${dDate}&ArrivalDate=${aDate}&FlightNumber=${fNumber}&DepartureAirport=${dAirport}&ArrivalAirport=${aAirport}`, options)
 	.then(response => response.json())
 	.then(response => {
-		localStorage.setItem("aDate", aDate)
+		
+
 	})
 	.catch(err => console.error(err));
-
-	window.location.href = 'http://127.0.0.1:5500/Alt-F404-Travel-Assistant/rental.html'
 
 
 }
 
 
-function getArrivalAirport(aAirport) {
+function getArrivalAirport(aAirport, aDate) {
     
 	const options = {
 		method: 'GET',
@@ -65,13 +64,15 @@ function getArrivalAirport(aAirport) {
 			localStorage.setItem("city", city)
 			localStorage.setItem("region", region)
 
-			window.location.href = 'http://127.0.0.1:5500/Alt-F404-Travel-Assistant/rental.html';
-			
+			localStorage.setItem("aDate", aDate)
+
+
+			window.location.href = "rental.html"
+
 
 		})
 		.catch(err => console.error(err))
 
-		
 		
 		
 	
