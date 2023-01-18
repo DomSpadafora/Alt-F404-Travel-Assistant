@@ -92,7 +92,7 @@ function showResults (response){
         }
         
         //Empty Page Elements
-        divEl.setAttribute("class", "column is-one-quarter-desktop is-half-mobile box has-text-black p-0 is-2")
+        divEl.setAttribute("class", "column is-one-quarter-desktop is-half-mobile is-one-third-tablet box has-text-black p-0 is-2")
         divEl.setAttribute("style","overflow:hidden")
         mainDiv.append(divEl)
         var nameEl = document.createElement("h4")
